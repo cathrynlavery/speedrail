@@ -1,0 +1,35 @@
+Arguments: 
+  /Users/cathrynlavery/.nodenv/versions/16.19.0/bin/node /opt/homebrew/Cellar/yarn/1.22.19/libexec/bin/yarn.js install
+
+PATH: 
+  /Users/cathrynlavery/.nodenv/versions/16.19.0/bin:/opt/homebrew/Cellar/nodenv/1.4.1/libexec:/Users/cathrynlavery/.gem/ruby/3.2.0/bin:/Users/cathrynlavery/.rubies/ruby-3.2.0/lib/ruby/gems/3.2.0/bin:/Users/cathrynlavery/.rubies/ruby-3.2.0/bin:/Users/cathrynlavery/.nodenv/shims:/Users/cathrynlavery/rubyonmac:/Users/cathrynlavery/.rbenv/shims:/usr/local/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/PostgreSQL/14/bin:/Library/Apple/usr/bin:/Applications/Postgres.app/Contents/Versions/latest/bin
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  16.19.0
+
+Platform: 
+  darwin arm64
+
+Trace: 
+  SyntaxError: /Users/cathrynlavery/Dev/ufw/package.json: Unexpected token : in JSON at position 17
+      at JSON.parse (<anonymous>)
+      at /opt/homebrew/Cellar/yarn/1.22.19/libexec/lib/cli.js:1629:59
+      at Generator.next (<anonymous>)
+      at step (/opt/homebrew/Cellar/yarn/1.22.19/libexec/lib/cli.js:310:30)
+      at /opt/homebrew/Cellar/yarn/1.22.19/libexec/lib/cli.js:321:13
+
+npm manifest: 
+  "devDependencies": {
+    "tailwindcss": "^2.0.2",
+    "postcss": "^8.1.14",
+    "autoprefixer": "^10.1.0"
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

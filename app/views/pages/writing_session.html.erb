@@ -1,0 +1,56 @@
+<% meta title: "Unfiltered Writing Session", description: "Writing Session" %>
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Writing Session</title>
+  <style>
+    textarea.fade {
+      opacity: 0;
+      transition: opacity 2s linear;
+    }
+  </style>
+</head>
+<body>
+  <h1>Writing Session</h1>
+  <p id="prompt">Press 'Start Writing' to begin.</p>
+  <textarea id="text" rows="30" cols="80"></textarea>
+  <p>Your word count is:</p>
+  <p id="word_count"></p>
+  <button id="copy" style="display: none;">Copy</button>
+  <script>
+    var timer;
+    var fadeTimer;
+    var prompt = <%= @prompt.to_json.html_safe %>;
+    var textArea = document.getElementById("text");
+    var wordCount = 0;
+    document.getElementById("prompt").innerHTML = prompt.content;
+
+    textArea.addEventListener("keyup", function() {
+      clearTimeout(timer);
+      clearTimeout(fadeTimer);
+      textArea.style.opacity = 1;
+      timer = setTimeout(deleteText, 6000);
+      fadeTimer = setTimeout(startFade, 3000);
+
+      wordCount = this.value.split(" ").length;
+      document.getElementById("word_count").innerHTML = wordCount;
+    });
+
+    function deleteText() {
+      textArea.value = '';
+      wordCount = 0;
+      document.getElementById("word_count").innerHTML = wordCount;
+    }
+
+    function startFade() {
+      textArea.classList.add("fade");
+    }
+
+    document.getElementById("copy").addEventListener("click", function() {
+      var text = document.getElementById("text").value;
+      navigator.clipboard.writeText(text);
+    });
+  </script>
+</body>
+</html>

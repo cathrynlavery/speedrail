@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Random Prompt Generator</title>
+  <meta charset="utf-8">
+</head>
+<body>
+  <div class="container">
+    <h1>Unfiltered Writing Prompt</h1>
+    <p>Generate a random prompt for your next creative project.</p>
+    <form action="/writing_session" method="get">
+      <div class="form-group">
+        <label for="prompt">Prompt</label>
+        <input type="text" class="form-control" id="prompt" name="prompt" value="<%= @prompt.content %>" readonly>
+      </div>
+      <button type="submit" class="btn btn-primary">Start Writing</button>
+    </form>
+    <button id="generate" class="btn btn-primary">Generate new Prompt</button>
+  </div>
+
+  <script>
+    document.getElementById("generate").addEventListener("click", function() {
+      location.reload();
+    });
+  </script>
+</body>
+</html>

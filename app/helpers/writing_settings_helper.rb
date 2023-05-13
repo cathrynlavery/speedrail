@@ -1,0 +1,2 @@
+module WritingSettingsHelper
+end
